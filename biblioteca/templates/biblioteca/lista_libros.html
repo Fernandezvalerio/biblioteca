@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'biblioteca/styles.css' %}">
+    <title>Lista de Libros</title>
+</head>
+<body>
+    <h1>Libros Registrados</h1>
+    <ul>
+        {% for libro in libros %}
+            <li>
+                <strong>{{ libro.titulo }}</strong> por {{ libro.autor }} 
+                (Publicado en: {{ libro.fecha_publicacion }})
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'crear_libro' %}">Registrar Nuevo Libro</a>
+</body>
+</html>

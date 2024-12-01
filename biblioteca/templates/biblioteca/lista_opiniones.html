@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'biblioteca/styles.css' %}">
+    <title>Lista de Opiniones</title>
+</head>
+<body>
+    <h1>Opiniones por Libro</h1>
+    <ul>
+        {% for opinion in opiniones %}
+            <li>
+                <strong>{{ opinion.libro.titulo }}</strong>: "{{ opinion.comentario }}"
+                <br>
+                Calificación: {{ opinion.calificacion }}/5 por {{ opinion.usuario.nombre }}
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'crear_opinion' %}">Agregar Nueva Opinión</a>
+</body>
+</html>
