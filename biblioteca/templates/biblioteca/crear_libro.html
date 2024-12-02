@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../static/biblioteca/styles.css">
-    <title>Crear Libro</title>
+    <title>Registrar Libro</title>
 </head>
 <body>
-    <h1>Crear Libro</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Guardar</button>
-    </form>
-    <a href="{% url 'lista_libros' %}">Ver Libros</a>
+    <div class="container">
+        <h1>Registrar Libro</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Guardar</button>
+        </form>
+        <div class="links">
+            <a href="{% url 'pagina_inicio' %}">Volver al Inicio</a>
+        </div>
+    </div>
 </body>
 </html>
+

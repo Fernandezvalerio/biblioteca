@@ -7,15 +7,22 @@
     <title>Lista de Libros</title>
 </head>
 <body>
-    <h1>Libros Registrados</h1>
-    <ul>
-        {% for libro in libros %}
-            <li>
-                <strong>{{ libro.titulo }}</strong> por {{ libro.autor }} 
-                (Publicado en: {{ libro.fecha_publicacion }})
-            </li>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'crear_libro' %}">Registrar Nuevo Libro</a>
+    <div class="container">
+        <h1>Libros Registrados</h1>
+        <ul>
+            {% for libro in libros %}
+                <li>
+                    <strong>{{ libro.titulo }}</strong> por {{ libro.autor }} 
+                    (Publicado en: {{ libro.fecha_publicacion }})
+                </li>
+            {% endfor %}
+        </ul>
+        <div class="links">
+            <a href="{% url 'crear_libro' %}">Registrar Nuevo Libro</a>
+            <a href="{% url 'pagina_inicio' %}">Volver al Inicio</a>
+        </div>
+    </div>
 </body>
 </html>
+
+

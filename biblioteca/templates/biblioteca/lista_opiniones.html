@@ -7,16 +7,23 @@
     <title>Lista de Opiniones</title>
 </head>
 <body>
-    <h1>Opiniones por Libro</h1>
-    <ul>
-        {% for opinion in opiniones %}
-            <li>
-                <strong>{{ opinion.libro.titulo }}</strong>: "{{ opinion.comentario }}"
-                <br>
-                Calificación: {{ opinion.calificacion }}/5 por {{ opinion.usuario.nombre }}
-            </li>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'crear_opinion' %}">Agregar Nueva Opinión</a>
+    <div class="container">
+        <h1>Opiniones Registradas</h1>
+        <ul>
+            {% for opinion in opiniones %}
+                <li>
+                    <strong>{{ opinion.usuario.nombre }}</strong> opinó sobre 
+                    <strong>{{ opinion.libro.titulo }}</strong>: 
+                    "{{ opinion.comentario }}" (Puntuación: {{ opinion.puntuacion }}/5)
+                </li>
+            {% endfor %}
+        </ul>
+        <div class="links">
+            <a href="{% url 'crear_opinion' %}">Registrar Nueva Opinión</a>
+            <a href="{% url 'pagina_inicio' %}">Volver al Inicio</a>
+        </div>
+    </div>
 </body>
 </html>
+
+

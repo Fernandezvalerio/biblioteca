@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../static/biblioteca/styles.css">
-    <title>Crear Usuario</title>
+    <title>Registrar Usuario</title>
 </head>
 <body>
-    <h1>Crear Usuario</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Guardar</button>
-    </form>
-    <a href="{% url 'lista_usuarios' %}">Ver Usuarios</a>
+    <div class="container">
+        <h1>Registrar Usuario</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Guardar</button>
+        </form>
+        <div class="links">
+            <a href="{% url 'pagina_inicio' %}">Volver al Inicio</a>
+        </div>
+    </div>
 </body>
 </html>
+
